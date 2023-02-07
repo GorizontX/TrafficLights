@@ -30,10 +30,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func trafficLightStarted() {
-        redImageView.alpha = 1
+        startButton.setTitle("NEXT", for: .normal)
+        
+        if redImageView.alpha == 1 {
+            redImageView.alpha = 0.3
+            yellowImageView.alpha = 1
+        } else if yellowImageView.alpha == 1 {
+            yellowImageView.alpha = 0.3
+            greenImageView.alpha = 1
+        } else {
+            greenImageView.alpha = 0.3
+            redImageView.alpha = 1
+        }
         
     }
     
 }
 
- 
+
